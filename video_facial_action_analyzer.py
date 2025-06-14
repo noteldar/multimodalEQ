@@ -8,7 +8,7 @@ from pathlib import Path
 import logging
 from datetime import datetime
 import torch
-import pkg_resources
+import importlib.util
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -50,8 +50,13 @@ class VideoFacialActionAnalyzer:
             # Try to use Hydra's compose API with the actual facetorch configuration
             # Try to find facetorch's configuration directory
             try:
-                facetorch_path = pkg_resources.resource_filename("facetorch", "")
-                config_dir = os.path.join(os.path.dirname(facetorch_path), "conf")
+                facetorch_spec = importlib.util.find_spec("facetorch")
+                if facetorch_spec and facetorch_spec.origin:
+                    # Get the directory containing the facetorch package
+                    facetorch_path = os.path.dirname(facetorch_spec.origin)
+                    config_dir = os.path.join(os.path.dirname(facetorch_path), "conf")
+                else:
+                    raise FileNotFoundError("Could not locate facetorch package")
 
                 if not os.path.exists(config_dir):
                     # Try alternative paths
@@ -82,11 +87,18 @@ class VideoFacialActionAnalyzer:
                 logger.warning(
                     f"Could not load facetorch config from package: {config_error}"
                 )
-                # Fall back to a very simple approach - just try empty config
+                # Fall back to a very simple approach - but include required logger
                 logger.info("Trying with minimal configuration...")
 
-                # Create an absolute minimal config
-                cfg = OmegaConf.create({})
+                # Create a minimal config with at least the required logger
+                cfg = OmegaConf.create(
+                    {
+                        "logger": {
+                            "_target_": "facetorch.logger.LoggerJsonFile",
+                            "level": "INFO",
+                        }
+                    }
+                )
                 self.analyzer = FaceAnalyzer(cfg)
 
             logger.info(
