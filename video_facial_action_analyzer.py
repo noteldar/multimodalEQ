@@ -8,6 +8,7 @@ from pathlib import Path
 import logging
 from datetime import datetime
 import torch
+import importlib.util
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -46,49 +47,84 @@ class VideoFacialActionAnalyzer:
 
         # Initialize facetorch analyzer
         try:
-            # Create a simple configuration that should work
-            from omegaconf import OmegaConf
+            # Try to use Hydra's compose API with the actual facetorch configuration
+            # Try to find facetorch's configuration directory
+            try:
+                facetorch_spec = importlib.util.find_spec("facetorch")
+                if facetorch_spec and facetorch_spec.origin:
+                    # Get the directory containing the facetorch package
+                    facetorch_path = os.path.dirname(facetorch_spec.origin)
+                    config_dir = os.path.join(os.path.dirname(facetorch_path), "conf")
+                else:
+                    raise FileNotFoundError("Could not locate facetorch package")
 
-            # Try to use a basic configuration that includes the essential components
-            cfg = OmegaConf.create(
-                {
-                    "logger": {"_target_": "facetorch.logger.Logger", "level": "INFO"},
-                    "reader": {"_target_": "facetorch.reader.ImageReader"},
-                    "detector": {
-                        "_target_": "facetorch.detector.RetinaFaceDetector",
-                        "device": self.device,
-                    },
-                    "unifier": {"_target_": "facetorch.unifier.FaceUnifier"},
-                    "predictor": {
-                        "au": {
-                            "_target_": "facetorch.predictor.AUPredictor",
-                            "device": self.device,
-                        },
-                        "fer": {
-                            "_target_": "facetorch.predictor.FERPredictor",
-                            "device": self.device,
-                        },
-                    },
-                }
-            )
+                if not os.path.exists(config_dir):
+                    # Try alternative paths
+                    possible_paths = [
+                        os.path.join(facetorch_path, "..", "conf"),
+                        os.path.join(facetorch_path, "conf"),
+                        "/opt/conda/lib/python*/site-packages/facetorch/conf",
+                    ]
 
-            self.analyzer = FaceAnalyzer(cfg)
+                    for path in possible_paths:
+                        expanded_path = os.path.expanduser(os.path.expandvars(path))
+                        if os.path.exists(expanded_path):
+                            config_dir = expanded_path
+                            break
+                    else:
+                        raise FileNotFoundError(
+                            "Could not find facetorch configuration directory"
+                        )
+
+                logger.info(f"Found facetorch config directory: {config_dir}")
+
+                # Use Hydra's compose API with the found config directory
+                with initialize_config_dir(version_base=None, config_dir=config_dir):
+                    cfg = compose(config_name="config")
+                    self.analyzer = FaceAnalyzer(cfg)
+
+            except Exception as config_error:
+                logger.warning(
+                    f"Could not load facetorch config from package: {config_error}"
+                )
+                # Fall back to a very simple approach - try different logger configurations
+                logger.info("Trying with minimal configuration...")
+
+                # Try different minimal configurations
+                logger_configs = [
+                    # Try with a simple logger
+                    {"logger": {"_target_": "facetorch.logger.Logger"}},
+                    # Try with LoggerJsonConsole
+                    {"logger": {"_target_": "facetorch.logger.LoggerJsonConsole"}},
+                    # Try with basic Python logger
+                    {"logger": {"_target_": "logging.getLogger", "name": "facetorch"}},
+                ]
+
+                success = False
+                for i, config in enumerate(logger_configs):
+                    try:
+                        logger.info(f"Attempting logger configuration {i+1}...")
+                        cfg = OmegaConf.create(config)
+                        self.analyzer = FaceAnalyzer(cfg)
+                        success = True
+                        logger.info(
+                            f"Successfully initialized with logger config {i+1}"
+                        )
+                        break
+                    except Exception as e:
+                        logger.warning(f"Logger config {i+1} failed: {e}")
+                        continue
+
+                if not success:
+                    raise RuntimeError("All logger configurations failed")
+
             logger.info(
-                f"FaceAnalyzer initialized with device preference: {self.device}"
+                f"FaceAnalyzer initialized successfully with device preference: {self.device}"
             )
+
         except Exception as e:
             logger.error(f"Failed to initialize FaceAnalyzer: {e}")
-            # Try even simpler fallback
-            try:
-                logger.info("Attempting simplified initialization...")
-                cfg = OmegaConf.create(
-                    {"logger": {"_target_": "facetorch.logger.Logger", "level": "INFO"}}
-                )
-                self.analyzer = FaceAnalyzer(cfg)
-                logger.info("FaceAnalyzer initialized with minimal configuration")
-            except Exception as fallback_e:
-                logger.error(f"Fallback initialization also failed: {fallback_e}")
-                raise
+            raise
 
     def _setup_device(self, device: str) -> str:
         """Setup the appropriate device for processing."""
