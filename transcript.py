@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 
-def get_video_transcript(video_path: str, model_size: str = "base") -> str:
+def get_video_transcript(video_path: str, model_size: str = "large") -> str:
     """
     Transcribe an MP4 video file using OpenAI Whisper.
 
@@ -52,7 +52,7 @@ def get_video_transcript(video_path: str, model_size: str = "base") -> str:
 
 
 def get_video_transcript_with_timestamps(
-    video_path: str, model_size: str = "base"
+    video_path: str, model_size: str = "large"
 ) -> dict:
     """
     Transcribe an MP4 video file using OpenAI Whisper with timestamps.
