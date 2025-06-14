@@ -372,7 +372,7 @@ def analyze_video_facial_actions(
 
 if __name__ == "__main__":
     # Example usage
-    video_file = "example_video.mp4"  # Replace with your video path
+    video_file = "demo.mp4"  # Replace with your video path
     output_dir = "facial_analysis_results"
 
     try:
