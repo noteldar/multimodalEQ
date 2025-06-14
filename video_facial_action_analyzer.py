@@ -16,6 +16,8 @@ logger = logging.getLogger(__name__)
 try:
     import facetorch
     from facetorch import FaceAnalyzer
+    from hydra import compose, initialize_config_dir
+    from omegaconf import OmegaConf
 except ImportError:
     logger.error("facetorch not installed. Install with: pip install facetorch")
     raise
@@ -44,15 +46,46 @@ class VideoFacialActionAnalyzer:
 
         # Initialize facetorch analyzer
         try:
-            if config_path:
-                self.analyzer = FaceAnalyzer(cfg_path=config_path, device=self.device)
-            else:
-                # Use default configuration which includes AU detection
-                self.analyzer = FaceAnalyzer(device=self.device)
-            logger.info(f"FaceAnalyzer initialized on device: {self.device}")
+            # Create a simple configuration that should work
+            from omegaconf import OmegaConf
+
+            # Try to use a basic configuration that includes the essential components
+            cfg = OmegaConf.create(
+                {
+                    "reader": {"_target_": "facetorch.reader.ImageReader"},
+                    "detector": {
+                        "_target_": "facetorch.detector.RetinaFaceDetector",
+                        "device": self.device,
+                    },
+                    "unifier": {"_target_": "facetorch.unifier.FaceUnifier"},
+                    "predictor": {
+                        "au": {
+                            "_target_": "facetorch.predictor.AUPredictor",
+                            "device": self.device,
+                        },
+                        "fer": {
+                            "_target_": "facetorch.predictor.FERPredictor",
+                            "device": self.device,
+                        },
+                    },
+                }
+            )
+
+            self.analyzer = FaceAnalyzer(cfg)
+            logger.info(
+                f"FaceAnalyzer initialized with device preference: {self.device}"
+            )
         except Exception as e:
             logger.error(f"Failed to initialize FaceAnalyzer: {e}")
-            raise
+            # Try even simpler fallback
+            try:
+                logger.info("Attempting simplified initialization...")
+                cfg = OmegaConf.create({})
+                self.analyzer = FaceAnalyzer(cfg)
+                logger.info("FaceAnalyzer initialized with empty configuration")
+            except Exception as fallback_e:
+                logger.error(f"Fallback initialization also failed: {fallback_e}")
+                raise
 
     def _setup_device(self, device: str) -> str:
         """Setup the appropriate device for processing."""
@@ -372,7 +405,7 @@ def analyze_video_facial_actions(
 
 if __name__ == "__main__":
     # Example usage
-    video_file = "demo.mp4"  # Replace with your video path
+    video_file = "henry.mp4"  # Replace with your video path
     output_dir = "facial_analysis_results"
 
     try:

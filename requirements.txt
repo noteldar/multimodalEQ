@@ -1,6 +1,9 @@
 # Core facial analysis library
 facetorch>=0.6.0
 
+# YouTube downloading
+yt-dlp>=2023.7.6
+
 # Computer vision and video processing
 opencv-python>=4.5.0
 opencv-contrib-python>=4.5.0
