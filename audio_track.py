@@ -84,6 +84,6 @@ def extract_audio_to_mp3_simple(video_path):
 # Example usage
 if __name__ == "__main__":
     # Example usage - uncomment and modify paths as needed
-    video_file = "demo.mp4"
+    video_file = "annoyed.mp4"
     mp3_file = extract_audio_to_mp3(video_file)
     print(f"Audio extracted to: {mp3_file}")
