@@ -87,19 +87,36 @@ class VideoFacialActionAnalyzer:
                 logger.warning(
                     f"Could not load facetorch config from package: {config_error}"
                 )
-                # Fall back to a very simple approach - but include required logger
+                # Fall back to a very simple approach - try different logger configurations
                 logger.info("Trying with minimal configuration...")
 
-                # Create a minimal config with at least the required logger
-                cfg = OmegaConf.create(
-                    {
-                        "logger": {
-                            "_target_": "facetorch.logger.LoggerJsonFile",
-                            "level": "INFO",
-                        }
-                    }
-                )
-                self.analyzer = FaceAnalyzer(cfg)
+                # Try different minimal configurations
+                logger_configs = [
+                    # Try with a simple logger
+                    {"logger": {"_target_": "facetorch.logger.Logger"}},
+                    # Try with LoggerJsonConsole
+                    {"logger": {"_target_": "facetorch.logger.LoggerJsonConsole"}},
+                    # Try with basic Python logger
+                    {"logger": {"_target_": "logging.getLogger", "name": "facetorch"}},
+                ]
+
+                success = False
+                for i, config in enumerate(logger_configs):
+                    try:
+                        logger.info(f"Attempting logger configuration {i+1}...")
+                        cfg = OmegaConf.create(config)
+                        self.analyzer = FaceAnalyzer(cfg)
+                        success = True
+                        logger.info(
+                            f"Successfully initialized with logger config {i+1}"
+                        )
+                        break
+                    except Exception as e:
+                        logger.warning(f"Logger config {i+1} failed: {e}")
+                        continue
+
+                if not success:
+                    raise RuntimeError("All logger configurations failed")
 
             logger.info(
                 f"FaceAnalyzer initialized successfully with device preference: {self.device}"
