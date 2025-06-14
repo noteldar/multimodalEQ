@@ -1,0 +1,24 @@
+INSTALLATION GUIDE - Facial Action Analysis with FaceTorch
+
+1. Install Python dependencies:
+   pip install facetorch opencv-python numpy pandas torch torchvision
+
+2. Test installation:
+   python -c "import facetorch; print('FaceTorch installed successfully')"
+
+3. Run basic analysis:
+   python facetorch_video_analyzer.py
+
+4. For enhanced features:
+   python enhanced_facetorch_analyzer.py video.mp4 --output results/
+
+REQUIREMENTS:
+- Python 3.8+
+- GPU with CUDA (optional but recommended)
+- At least 4GB RAM
+- OpenCV-compatible video formats (MP4, AVI, MOV)
+
+TROUBLESHOOTING:
+- If CUDA errors occur, use --device cpu flag
+- For large videos, increase sample_rate parameter
+- Check video file permissions and format compatibility 
