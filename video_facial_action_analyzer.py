@@ -52,6 +52,7 @@ class VideoFacialActionAnalyzer:
             # Try to use a basic configuration that includes the essential components
             cfg = OmegaConf.create(
                 {
+                    "logger": {"_target_": "facetorch.logger.Logger", "level": "INFO"},
                     "reader": {"_target_": "facetorch.reader.ImageReader"},
                     "detector": {
                         "_target_": "facetorch.detector.RetinaFaceDetector",
@@ -80,9 +81,11 @@ class VideoFacialActionAnalyzer:
             # Try even simpler fallback
             try:
                 logger.info("Attempting simplified initialization...")
-                cfg = OmegaConf.create({})
+                cfg = OmegaConf.create(
+                    {"logger": {"_target_": "facetorch.logger.Logger", "level": "INFO"}}
+                )
                 self.analyzer = FaceAnalyzer(cfg)
-                logger.info("FaceAnalyzer initialized with empty configuration")
+                logger.info("FaceAnalyzer initialized with minimal configuration")
             except Exception as fallback_e:
                 logger.error(f"Fallback initialization also failed: {fallback_e}")
                 raise
