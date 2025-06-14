@@ -1,0 +1,17 @@
+{
+  "file": "henry.mp4",
+  "text_emotions": [
+    {
+      "emotion": "excitement",
+      "level": 8
+    },
+    {
+      "emotion": "confidence",
+      "level": 7
+    },
+    {
+      "emotion": "anxiety",
+      "level": 4
+    }
+  ]
+}
