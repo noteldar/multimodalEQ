@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 
-def get_video_transcript(video_path: str, model_size: str = "large") -> str:
+def get_video_transcript(video_path: str, model_size: str = "base") -> str:
     """
     Transcribe an MP4 video file using faster-whisper.
 
