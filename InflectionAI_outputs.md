@@ -3,7 +3,11 @@ Used whisper base model
 henry.mp4
 Yes.  Yes.  Awesome.  Amazing.  Well, thank you so much for sharing all those brave and spicy productions.  I think we got a mode constraint from Yidan.  So, I would love to start our discussion there.
 
+annoyed.mp4
+annoying you. Why is it annoying me? Too much reason. Hey man, please don't. What? How could you not? How could you even not  wear off your own self? How could you not even not wear off why you annoyed other people?
 
+khabib.mp4
+What I want from you see Tuesday, you guys have to put me on number one palm from palm fighting in the world because I deserve this
 
 Prompt for Inflection AI's Pi 3.1:
 
@@ -35,3 +39,16 @@ henry.mp4
     {"emotion": "appreciation", "level": 4}
 ]
 
+annoyed.mp4
+[
+    {"emotion": "anger", "level": 9},
+    {"emotion": "confusion", "level": 6},
+    {"emotion": "disappointment", "level": 7}
+]
+
+khabib.mp4
+[
+    {"emotion": "determination", "level": 9},
+    {"emotion": "confidence", "level": 8},
+    {"emotion": "ambition", "level": 9}
+]
