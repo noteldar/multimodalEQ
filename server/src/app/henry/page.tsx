@@ -5,7 +5,7 @@ import Chart from 'chart.js/auto';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
-export default function KhabibPage() {
+export default function HenryPage() {
     const voiceToneChartRef = useRef<HTMLCanvasElement>(null);
     const facialExpressionChartRef = useRef<HTMLCanvasElement>(null);
     const heartRateChartRef = useRef<HTMLCanvasElement>(null);
@@ -38,7 +38,7 @@ export default function KhabibPage() {
 
     // Load facial expression data
     useEffect(() => {
-        fetch('/khabib.json')
+        fetch('/henry.json')
             .then(response => response.json())
             .then(data => {
                 console.log('Loaded facial expression data:', data.length, 'frames');
@@ -49,7 +49,7 @@ export default function KhabibPage() {
 
     // Load heart rate data
     useEffect(() => {
-        fetch('/khabib.csv')
+        fetch('/henry.csv')
             .then(response => response.text())
             .then(csvText => {
                 const lines = csvText.trim().split('\n');
@@ -68,7 +68,7 @@ export default function KhabibPage() {
 
     // Load verbal emotion data
     useEffect(() => {
-        fetch('/text_khabib.json')
+        fetch('/text_henry.json')
             .then(response => response.json())
             .then(data => {
                 console.log('Loaded verbal emotion data:', data);
@@ -79,7 +79,7 @@ export default function KhabibPage() {
 
     // Load non-verbal emotion data
     useEffect(() => {
-        fetch('/nonverbal_khabib.json')
+        fetch('/nonverbal_henry.json')
             .then(response => response.json())
             .then(data => {
                 console.log('Loaded non-verbal emotion data:', data);
@@ -707,7 +707,7 @@ export default function KhabibPage() {
                                 onCanPlay={handleVideoCanPlay}
                                 onLoadedData={handleVideoCanPlay}
                             >
-                                <source src="/khabib.mp4" type="video/mp4" />
+                                <source src="/henry.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -785,7 +785,7 @@ export default function KhabibPage() {
 
                         <div className="mt-6">
                             <Image
-                                src="/khabib_dots.png"
+                                src="/henry_dots.png"
                                 alt="Emotion visualization dots"
                                 className="w-full h-auto rounded-lg border border-gray-600"
                                 width={300}
