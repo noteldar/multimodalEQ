@@ -1,14 +1,10 @@
 [
-    {
-        "emotion": "Grief",
-        "level": 8
-    },
-    {
-        "emotion": "Conviction",
-        "level": 7
-    },
-    {
-        "emotion": "Exhaustion",
-        "level": 6
-    }
+    {"emotion": "excitement", "level": 9},
+    {"emotion": "gratitude", "level": 8},
+    {"emotion": "confidence", "level": 7},
+    {"emotion": "curiosity", "level": 6},
+    {"emotion": "determination", "level": 5},
+    {"emotion": "anger", "level": 0},
+    {"emotion": "confusion", "level": 1},
+    {"emotion": "disappointment", "level": 0}
 ]
