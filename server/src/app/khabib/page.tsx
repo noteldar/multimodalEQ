@@ -35,6 +35,18 @@ export default function KhabibPage() {
         emotion: string;
         level: number;
     }> | null>(null);
+    const [emotionTimelineData, setEmotionTimelineData] = useState<{ [key: string]: number[] } | null>(null);
+
+    // Load emotion timeline data
+    useEffect(() => {
+        fetch('/HumeAI_predictions_khabib_emotion_timeline.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Loaded emotion timeline data:', data);
+                setEmotionTimelineData(data);
+            })
+            .catch(error => console.error('Error loading emotion timeline data:', error));
+    }, []);
 
     // Load facial expression data
     useEffect(() => {
@@ -181,18 +193,13 @@ export default function KhabibPage() {
         const accentPrimary = '#63B3ED';
         const accentSecondary = '#4FD1C5';
 
-        // Emotion timeline data from the JSON file
-        const emotionData = {
-            "Anxiety": [0.0233, 0.158, 0.0131, 0.1404],
-            "Pain": [0.0107, 0.1524, 0.0035, 0.1183],
-            "Sadness": [0.0331, 0.1501, 0.0042, 0.1459],
-            "Determination": [0.0333, 0.0471, 0.1606, 0.0805],
-            "Concentration": [0.0248, 0.011, 0.303, 0.0214],
-            "Calmness": [0.0874, 0.0329, 0.2227, 0.0465],
-            "Distress": [0.0422, 0.1429, 0.0093, 0.1858],
-            "Boredom": [0.1048, 0.0567, 0.0229, 0.0328],
-            "Interest": [0.0629, 0.0045, 0.1213, 0.0389]
-        };
+        // Use dynamic emotion timeline data from the JSON file
+        if (!emotionTimelineData) {
+            console.log('Emotion timeline data not loaded yet');
+            return;
+        }
+
+        const emotionData = emotionTimelineData;
 
         const timeLabels = generateTimeLabels(videoDuration);
         console.log('Generating chart with duration:', videoDuration, 'labels:', timeLabels);
@@ -269,67 +276,30 @@ export default function KhabibPage() {
                     voiceToneChartInstanceRef.current = null;
                 }
 
+                // Create dynamic datasets from emotion data
+                const colors = [
+                    '#EF6C6C', '#63B3ED', '#10B981', '#4FD1C5', '#FBBF24',
+                    '#F59E0B', '#8B5CF6', '#EC4899', '#06B6D4'
+                ];
+
+                const datasets = Object.entries(emotionData).map(([emotion, data], index) => ({
+                    label: emotion,
+                    data: data,
+                    borderColor: colors[index % colors.length],
+                    backgroundColor: colors[index % colors.length].replace('1)', '0.2)').replace('#', 'rgba(').replace(/(..)(..)(..)/, (match, r, g, b) =>
+                        `rgba(${parseInt(r, 16)}, ${parseInt(g, 16)}, ${parseInt(b, 16)}, 0.2)`),
+                    tension: 0.4,
+                    borderWidth: 2,
+                    pointRadius: 3,
+                    pointBackgroundColor: colors[index % colors.length],
+                    borderDash: [5, 5]
+                }));
+
                 voiceToneChartInstanceRef.current = new Chart(ctx, {
                     type: 'line',
                     data: {
                         labels: timeLabels,
-                        datasets: [
-                            {
-                                label: 'Anxiety',
-                                data: emotionData.Anxiety,
-                                borderColor: '#EF6C6C',
-                                backgroundColor: 'rgba(239, 108, 108, 0.2)',
-                                tension: 0.4,
-                                borderWidth: 2,
-                                pointRadius: 3,
-                                pointBackgroundColor: '#EF6C6C',
-                                borderDash: [5, 5]
-                            },
-                            {
-                                label: 'Determination',
-                                data: emotionData.Determination,
-                                borderColor: accentPrimary,
-                                backgroundColor: 'rgba(99, 179, 237, 0.2)',
-                                tension: 0.4,
-                                borderWidth: 2,
-                                pointRadius: 3,
-                                pointBackgroundColor: accentPrimary,
-                                borderDash: [5, 5]
-                            },
-                            {
-                                label: 'Concentration',
-                                data: emotionData.Concentration,
-                                borderColor: '#10B981',
-                                backgroundColor: 'rgba(16, 185, 129, 0.2)',
-                                tension: 0.4,
-                                borderWidth: 2,
-                                pointRadius: 3,
-                                pointBackgroundColor: '#10B981',
-                                borderDash: [5, 5]
-                            },
-                            {
-                                label: 'Calmness',
-                                data: emotionData.Calmness,
-                                borderColor: accentSecondary,
-                                backgroundColor: 'rgba(79, 209, 197, 0.2)',
-                                tension: 0.4,
-                                borderWidth: 2,
-                                pointRadius: 3,
-                                pointBackgroundColor: accentSecondary,
-                                borderDash: [5, 5]
-                            },
-                            {
-                                label: 'Interest',
-                                data: emotionData.Interest,
-                                borderColor: '#FBBF24',
-                                backgroundColor: 'rgba(251, 191, 36, 0.2)',
-                                tension: 0.4,
-                                borderWidth: 2,
-                                pointRadius: 3,
-                                pointBackgroundColor: '#FBBF24',
-                                borderDash: [5, 5]
-                            }
-                        ]
+                        datasets: datasets
                     },
                     options: defaultLineChartOptions('Emotion Intensity')
                 });
@@ -642,7 +612,7 @@ export default function KhabibPage() {
             }
         }
 
-    }, [videoDuration, facialExpressionData, heartRateData, verbalEmotionData, nonverbalEmotionData]);
+    }, [videoDuration, facialExpressionData, heartRateData, verbalEmotionData, nonverbalEmotionData, emotionTimelineData]);
 
     // Cleanup effect when component unmounts
     useEffect(() => {
