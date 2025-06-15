@@ -117,6 +117,8 @@ def save_to_csv(results, filename="heart_rate_data.csv"):
 if __name__ == "__main__":
     # Process the JSON file
     json_file = "vitallens_khabib.json"
+    json_file = "vitallens_henry.json"
+    json_file = "vitallens_annoyed.json"
 
     try:
         # Generate heart rate data
@@ -138,7 +140,7 @@ if __name__ == "__main__":
         plot_heart_rate(results)
 
         # Save to CSV (optional)
-        # save_to_csv(results)
+        save_to_csv(results)
 
         # Access the heart rate array
         heart_rate_bpm = results["heart_rate_bpm"]
