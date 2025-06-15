@@ -1,0 +1,618 @@
+[
+  {
+    "frame": "frame_0001.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 18796
+  },
+  {
+    "frame": "frame_0011.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18807
+  },
+  {
+    "frame": "frame_0021.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18804
+  },
+  {
+    "frame": "frame_0031.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Contempt",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18800
+  },
+  {
+    "frame": "frame_0041.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18799
+  },
+  {
+    "frame": "frame_0051.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18802
+  },
+  {
+    "frame": "frame_0061.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18801
+  },
+  {
+    "frame": "frame_0071.png",
+    "num_faces": 3,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Neutral",
+      "2": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {}
+    },
+    "process_id": 18805
+  },
+  {
+    "frame": "frame_0081.png",
+    "num_faces": 3,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Disgust",
+      "2": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {}
+    },
+    "process_id": 18803
+  },
+  {
+    "frame": "frame_0091.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18806
+  },
+  {
+    "frame": "frame_0101.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 18796
+  },
+  {
+    "frame": "frame_0111.png",
+    "num_faces": 3,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Surprise",
+      "2": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {}
+    },
+    "process_id": 18807
+  },
+  {
+    "frame": "frame_0121.png",
+    "num_faces": 4,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Surprise",
+      "2": "Surprise",
+      "3": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {}
+    },
+    "process_id": 18804
+  },
+  {
+    "frame": "frame_0131.png",
+    "num_faces": 3,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Surprise",
+      "2": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {}
+    },
+    "process_id": 18799
+  },
+  {
+    "frame": "frame_0141.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 18801
+  },
+  {
+    "frame": "frame_0151.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18802
+  },
+  {
+    "frame": "frame_0161.png",
+    "num_faces": 4,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Surprise",
+      "2": "Neutral",
+      "3": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {}
+    },
+    "process_id": 18800
+  },
+  {
+    "frame": "frame_0171.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Disgust"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18806
+  },
+  {
+    "frame": "frame_0181.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 18805
+  },
+  {
+    "frame": "frame_0191.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18803
+  },
+  {
+    "frame": "frame_0201.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Surprise",
+      "1": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18796
+  },
+  {
+    "frame": "frame_0211.png",
+    "num_faces": 4,
+    "expressions": {
+      "0": "Contempt",
+      "1": "Neutral",
+      "2": "Surprise",
+      "3": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {}
+    },
+    "process_id": 18807
+  },
+  {
+    "frame": "frame_0221.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Disgust"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18804
+  },
+  {
+    "frame": "frame_0231.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18802
+  },
+  {
+    "frame": "frame_0241.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18799
+  },
+  {
+    "frame": "frame_0251.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18800
+  },
+  {
+    "frame": "frame_0261.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Disgust"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18801
+  },
+  {
+    "frame": "frame_0271.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Disgust"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 18806
+  },
+  {
+    "frame": "frame_0281.png",
+    "num_faces": 3,
+    "expressions": {
+      "0": "Contempt",
+      "1": "Neutral",
+      "2": "Disgust"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {}
+    },
+    "process_id": 18805
+  },
+  {
+    "frame": "frame_0291.png",
+    "num_faces": 3,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Neutral",
+      "2": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {}
+    },
+    "process_id": 18803
+  },
+  {
+    "frame": "frame_0301.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18796
+  },
+  {
+    "frame": "frame_0311.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Contempt",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18807
+  },
+  {
+    "frame": "frame_0321.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18804
+  },
+  {
+    "frame": "frame_0331.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Disgust"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 18802
+  },
+  {
+    "frame": "frame_0341.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18801
+  },
+  {
+    "frame": "frame_0351.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18799
+  },
+  {
+    "frame": "frame_0361.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18800
+  },
+  {
+    "frame": "frame_0371.png",
+    "num_faces": 3,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Neutral",
+      "2": "Disgust"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {}
+    },
+    "process_id": 18803
+  },
+  {
+    "frame": "frame_0381.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18805
+  },
+  {
+    "frame": "frame_0391.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Contempt",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18806
+  },
+  {
+    "frame": "frame_0401.png",
+    "num_faces": 3,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Neutral",
+      "2": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {}
+    },
+    "process_id": 18796
+  },
+  {
+    "frame": "frame_0411.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18807
+  },
+  {
+    "frame": "frame_0421.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18804
+  },
+  {
+    "frame": "frame_0431.png",
+    "num_faces": 3,
+    "expressions": {
+      "0": "Contempt",
+      "1": "Neutral",
+      "2": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {}
+    },
+    "process_id": 18802
+  },
+  {
+    "frame": "frame_0441.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18801
+  },
+  {
+    "frame": "frame_0451.png",
+    "num_faces": 2,
+    "expressions": {
+      "0": "Happiness",
+      "1": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {}
+    },
+    "process_id": 18799
+  }
+]

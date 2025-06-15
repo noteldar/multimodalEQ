@@ -1,0 +1,10 @@
+[
+    {"emotion": "Joy", "level": 1},
+    {"emotion": "Amusement", "level": 0},
+    {"emotion": "Confidence", "level": 4},
+    {"emotion": "Skepticism", "level": 1},
+    {"emotion": "Conviction", "level": 7},
+    {"emotion": "Annoyance", "level": 3},
+    {"emotion": "Grief", "level": 8},
+    {"emotion": "Exhaustion", "level": 7}
+]
