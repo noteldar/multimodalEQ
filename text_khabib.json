@@ -1,5 +1,10 @@
 [
-    {"emotion": "determination", "level": 9},
     {"emotion": "confidence", "level": 8},
-    {"emotion": "ambition", "level": 9}
+    {"emotion": "determination", "level": 9},
+    {"emotion": "excitement", "level": 8},
+    {"emotion": "gratitude", "level": 0},
+    {"emotion": "anger", "level": 3},
+    {"emotion": "disappointment", "level": 0},
+    {"emotion": "confusion", "level": 0},
+    {"emotion": "curiosity", "level": 0}
 ]

@@ -64,9 +64,9 @@ Pace: The speed of vocal delivery.
 Pitch Variation: Fluctuations in vocal frequency.
 Primary Objective:
 
-From this multi-layered analysis, deduce the three most salient and authentic emotions the speaker is experiencing or projecting. Prioritize the underlying emotional truth over performed or superficial expressions.
+From this multi-layered analysis, deduce the 8 most salient and authentic emotions the speaker is experiencing or projecting. Prioritize the underlying emotional truth over performed or superficial expressions.
 
-For each of the top three emotions, you must:
+For each of the top 8 emotions, you must:
 
 Identify the Emotion: Use a precise emotional descriptor (e.g., "Anxiety," "Contempt," "Triumph," "Nostalgia," not just "Happy" or "Sad").
 Assign an Intensity Score: Rate the intensity on a calibrated scale of 0 to 10, where:
@@ -76,6 +76,25 @@ Assign an Intensity Score: Rate the intensity on a calibrated scale of 0 to 10, 
 7-8: Strong and significantly influencing behavior.
 9-10: Overwhelming, the dominant driver of the speaker's state.
 Provide Justification: Briefly cite the key nonverbal evidence that led to your conclusion for each emotion. This is critical for grounding your analysis in observable data.
+
+Chose emotions only from this list:
+
+Joy – general happiness and lightness
+
+Amusement – playful or humorous enjoyment 
+
+Confidence – self-assurance, belief in ability 
+
+Skepticism – disbelief or incredulity 
+
+Conviction – firm belief or inner certainty 
+
+Exasperation – intense annoyance or irritation 
+
+Grief – deep sorrow or emotional pain 
+
+Exhaustion – extreme tiredness, mental or physical 
+
 Response Format:
 
 Respond only with a JSON array in the following exact structure. Do not include any introductory text, explanations, or extraneous formatting.
@@ -83,5 +102,10 @@ Respond only with a JSON array in the following exact structure. Do not include 
 [
     {"emotion": "emotion_name", "level": intensity_score},
     {"emotion": "emotion_name", "level": intensity_score},
-    {"emotion": "emotion_name", "level": intensity_score}
+    {"emotion": "emotion_name", "level": intensity_score},
+    {"emotion": "emotion_name", "level": intensity_score},
+    {"emotion": "emotion_name", "level": intensity_score},
+    {"emotion": "emotion_name", "level": intensity_score},
+    {"emotion": "emotion_name", "level": intensity_score},
+    {"emotion": "emotion_name", "level": intensity_score},
 ]
