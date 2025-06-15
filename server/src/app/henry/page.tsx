@@ -755,10 +755,10 @@ export default function HenryPage() {
                                 Emotional Analysis
                             </h2>
                             <div className="bg-gray-900 border border-gray-600 rounded-lg p-4 text-sm leading-relaxed text-gray-400 h-[calc(100%-3rem)]">
-                                Despite the clear physical exhaustion and an elevated heart rate from the grueling fight, the fighterfighter's voiceapos;s voice and words project
-                                unshakable determination and conviction in his final demand. However, his outwardly composed face briefly flashes with profound
-                                sadness and anger, revealing the deep emotional turmoil fueling his heartfelt plea. This powerful moment captures a champion channeling
-                                immense personal conviction and grief into one last, definitive statement of his legacy.
+                                While maintaining a composed and neutral facial expression, the speaker&apos;s elevated heart rate and joyful body language reveal
+                                his genuine excitement and confidence. As he interacts with the audience, his voice shows growing determination and interest,
+                                culminating in a moment of shared amusement and gratitude. This combination of outward calm and internal positive energy creates
+                                an engaging and welcoming atmosphere.
                             </div>
                         </div>
                     </div>

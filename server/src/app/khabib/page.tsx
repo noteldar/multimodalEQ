@@ -755,10 +755,10 @@ export default function KhabibPage() {
                                 Emotional Analysis
                             </h2>
                             <div className="bg-gray-900 border border-gray-600 rounded-lg p-4 text-sm leading-relaxed text-gray-400 h-[calc(100%-3rem)]">
-                                Despite the clear physical exhaustion and an elevated heart rate from the grueling fight, the fighterfighter's voiceapos;s voice and words project
-                                unshakable determination and conviction in his final demand. However, his outwardly composed face briefly flashes with profound
-                                sadness and anger, revealing the deep emotional turmoil fueling his heartfelt plea. This powerful moment captures a champion channeling
-                                immense personal conviction and grief into one last, definitive statement of his legacy.
+                                Despite the clear physical exhaustion and an elevated heart rate from the grueling fight, the fighter&apos;s voice and words project
+                                unshakable determination and conviction in his final demand. However, his outwardly composed face briefly flashes with
+                                profound sadness and anger, revealing the deep emotional turmoil fueling his heartfelt plea. This powerful moment captures a
+                                champion channeling immense personal conviction and grief into one last, definitive statement of his legacy.
                             </div>
                         </div>
                     </div>
