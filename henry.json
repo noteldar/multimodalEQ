@@ -1,0 +1,519 @@
+[
+  {
+    "frame": "frame_0001.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27979
+  },
+  {
+    "frame": "frame_0011.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27981
+  },
+  {
+    "frame": "frame_0021.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27975
+  },
+  {
+    "frame": "frame_0031.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27980
+  },
+  {
+    "frame": "frame_0041.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27983
+  },
+  {
+    "frame": "frame_0051.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27977
+  },
+  {
+    "frame": "frame_0061.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27978
+  },
+  {
+    "frame": "frame_0071.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27972
+  },
+  {
+    "frame": "frame_0081.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27976
+  },
+  {
+    "frame": "frame_0091.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27982
+  },
+  {
+    "frame": "frame_0101.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27979
+  },
+  {
+    "frame": "frame_0111.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27981
+  },
+  {
+    "frame": "frame_0121.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27975
+  },
+  {
+    "frame": "frame_0131.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27980
+  },
+  {
+    "frame": "frame_0141.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27983
+  },
+  {
+    "frame": "frame_0151.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27978
+  },
+  {
+    "frame": "frame_0161.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27972
+  },
+  {
+    "frame": "frame_0171.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27982
+  },
+  {
+    "frame": "frame_0181.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27977
+  },
+  {
+    "frame": "frame_0191.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27976
+  },
+  {
+    "frame": "frame_0201.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Contempt"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27979
+  },
+  {
+    "frame": "frame_0211.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Disgust"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27981
+  },
+  {
+    "frame": "frame_0221.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27975
+  },
+  {
+    "frame": "frame_0231.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27980
+  },
+  {
+    "frame": "frame_0241.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27983
+  },
+  {
+    "frame": "frame_0251.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27978
+  },
+  {
+    "frame": "frame_0261.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27982
+  },
+  {
+    "frame": "frame_0271.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27972
+  },
+  {
+    "frame": "frame_0281.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27977
+  },
+  {
+    "frame": "frame_0291.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27976
+  },
+  {
+    "frame": "frame_0301.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Happiness"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27979
+  },
+  {
+    "frame": "frame_0311.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27981
+  },
+  {
+    "frame": "frame_0321.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27975
+  },
+  {
+    "frame": "frame_0331.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27980
+  },
+  {
+    "frame": "frame_0341.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27983
+  },
+  {
+    "frame": "frame_0351.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27978
+  },
+  {
+    "frame": "frame_0361.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27972
+  },
+  {
+    "frame": "frame_0371.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27982
+  },
+  {
+    "frame": "frame_0381.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27976
+  },
+  {
+    "frame": "frame_0391.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27977
+  },
+  {
+    "frame": "frame_0401.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27979
+  },
+  {
+    "frame": "frame_0411.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27981
+  },
+  {
+    "frame": "frame_0421.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27975
+  },
+  {
+    "frame": "frame_0431.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Fear"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27980
+  },
+  {
+    "frame": "frame_0441.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27983
+  },
+  {
+    "frame": "frame_0451.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27978
+  },
+  {
+    "frame": "frame_0461.png",
+    "num_faces": 1,
+    "expressions": {
+      "0": "Surprise"
+    },
+    "valence_arousal": {
+      "0": {}
+    },
+    "process_id": 27972
+  }
+]

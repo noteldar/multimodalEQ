@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khabib - Emotional Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.29.3/index.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .video-section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        video {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .panels-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            min-height: 400px;
+        }
+
+        .panel h3 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 350px;
+            width: 100%;
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            color: #666;
+        }
+
+        .bottom-panels {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .panels-container {
+                grid-template-columns: 1fr;
+            }
+
+            .bottom-panels {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="text-center mb-16">
+            <h1 class="header-title">Khabib Emotional Analysis</h1>
+            <p class="header-subtitle">Understanding the emotional landscape of Khabib's speech content.</p>
+        </header>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-3 card">
+                <h2 class="title">
+                    <span class="material-icons">videocam</span> Video Analysis
+                </h2>
+                <video controls>
+                    <source src="khabib.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="lg:col-span-1 card">
+                <h2 class="title">
+                    <span class="material-icons">psychology</span> Emotion Time Series Analysis
+                </h2>
+                <div class="chart-container">
+                    <canvas id="emotionChart"></canvas>
+                </div>
+            </div>
+            <div class="lg:col-span-1 card">
+                <h2 class="title">
+                    <span class="material-icons">analytics</span> Analysis Panel 2
+                </h2>
+                <div class="loading">Chart will be added later</div>
+            </div>
+            <div class="lg:col-span-1 card">
+                <h2 class="title">
+                    <span class="material-icons">insights</span> Analysis Panel 3
+                </h2>
+                <div class="loading">Chart will be added later</div>
+            </div>
+        </div>
+        <footer class="text-center mt-16 py-8 border-footer">
+            <p class="footer-text">© 2024 Emotion AI. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Load and process the HumeAI data
+        async function loadEmotionData() {
+            try {
+                const response = await fetch('HumeAI_predictions_khabib.json');
+                const data = await response.json();
+
+                // Extract prosody predictions
+                const prosodyData = data[0].results.predictions[0].models.prosody.grouped_predictions[0].predictions;
+
+                // Process emotions data
+                const emotionTimeSeries = processEmotions(prosodyData);
+
+                // Create the chart
+                createEmotionChart(emotionTimeSeries);
+
+            } catch (error) {
+                console.error('Error loading emotion data:', error);
+                document.getElementById('emotionChart').parentElement.innerHTML =
+                    '<div class="loading">Error loading data</div>';
+            }
+        }
+
+        function processEmotions(predictions) {
+            // Step 1: Get top 5 emotions from each time period
+            const allTopEmotions = new Set();
+
+            predictions.forEach(prediction => {
+                // Sort emotions by score and get top 5
+                const topEmotions = prediction.emotions
+                    .sort((a, b) => b.score - a.score)
+                    .slice(0, 5);
+
+                topEmotions.forEach(emotion => {
+                    allTopEmotions.add(emotion.name);
+                });
+            });
+
+            // Convert to array and limit to reasonable number for visualization
+            const selectedEmotions = Array.from(allTopEmotions).slice(0, 8);
+
+            // Step 2: Create time series for each selected emotion
+            const timeSeries = {};
+            selectedEmotions.forEach(emotionName => {
+                timeSeries[emotionName] = [];
+            });
+
+            predictions.forEach(prediction => {
+                const timePoint = prediction.time.begin;
+
+                // Create emotion lookup for this time point
+                const emotionLookup = {};
+                prediction.emotions.forEach(emotion => {
+                    emotionLookup[emotion.name] = emotion.score;
+                });
+
+                // Add data point for each selected emotion
+                selectedEmotions.forEach(emotionName => {
+                    timeSeries[emotionName].push({
+                        x: timePoint,
+                        y: emotionLookup[emotionName] || 0
+                    });
+                });
+            });
+
+            return { timeSeries, emotions: selectedEmotions };
+        }
+
+        function createEmotionChart(emotionData) {
+            const ctx = document.getElementById('emotionChart').getContext('2d');
+
+            // Generate colors for each emotion
+            const colors = [
+                '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0',
+                '#9966FF', '#FF9F40', '#FF6384', '#C9CBCF'
+            ];
+
+            const datasets = emotionData.emotions.map((emotion, index) => ({
+                label: emotion,
+                data: emotionData.timeSeries[emotion],
+                borderColor: colors[index % colors.length],
+                backgroundColor: colors[index % colors.length] + '20',
+                fill: false,
+                tension: 0.4,
+                pointRadius: 3,
+                pointHoverRadius: 6
+            }));
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Top Emotions Over Time'
+                        },
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                boxWidth: 12,
+                                padding: 15
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom',
+                            title: {
+                                display: true,
+                                text: 'Time (seconds)'
+                            },
+                            ticks: {
+                                callback: function (value) {
+                                    return value.toFixed(1) + 's';
+                                }
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Emotion Probability'
+                            },
+                            min: 0,
+                            max: 1,
+                            ticks: {
+                                callback: function (value) {
+                                    return (value * 100).toFixed(0) + '%';
+                                }
+                            }
+                        }
+                    },
+                    elements: {
+                        point: {
+                            hoverBackgroundColor: '#fff'
+                        }
+                    }
+                }
+            });
+        }
+
+        // Load data when page loads
+        document.addEventListener('DOMContentLoaded', loadEmotionData);
+    </script>
+</body>
+
+</html>

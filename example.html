@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Emotion Analysis</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style type="text/tailwindcss">
+        :root {
+      --bg-primary: #1A202C;
+      --bg-secondary: #2D3748;
+      --text-primary: #E2E8F0;
+      --text-secondary: #A0AEC0;
+      --accent-primary: #63B3ED;
+      --accent-secondary: #4FD1C5;
+      --border-primary: #4A5568;
+      --shadow-color: rgba(0, 0, 0, 0.2);
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .card {
+      background-color: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px var(--shadow-color);
+      border: 1px solid var(--border-primary);
+    }
+    .title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+    }
+    .title .material-icons {
+      color: var(--accent-primary);
+      margin-right: 0.75rem;
+    }
+    .text-box {
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-primary);
+      border-radius: 8px;
+      padding: 1rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+    .text-box strong {
+      color: var(--accent-primary);
+      font-weight: 500;
+    }
+    .chart-container {
+      position: relative;
+      height: 200px;
+      width: 100%;
+    }
+    .small-chart-container {
+      position: relative;
+      height: 200px;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .spider-chart-container {
+      height: 230px;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .header-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .header-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      margin-top: 0.5rem;
+    }
+    .footer-text {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+    .border-footer {
+      border-top: 1px solid var(--border-primary);
+    }
+    .video-placeholder {
+      background-color: var(--border-primary);
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-placeholder p {
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="text-center mb-16">
+            <h1 class="header-title">Emotion Insights</h1>
+            <p class="header-subtitle">Understanding the emotional landscape of your video content.</p>
+        </header>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-3 card">
+                <h2 class="title">
+                    <span class="material-icons">videocam</span> Video Analysis
+                </h2>
+                <div class="video-placeholder">
+                    <p>Video Placeholder</p>
+                </div>
+            </div>
+            <div class="lg:col-span-1 card space-y-6">
+                <div>
+                    <h2 class="title">
+                        <span class="material-icons">mic</span> Voice/Tone Progression
+                    </h2>
+                    <div class="chart-container">
+                        <canvas id="voiceToneChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="title">
+                        <span class="material-icons">face</span> Facial Expressions
+                    </h2>
+                    <div class="chart-container">
+                        <canvas id="facialExpressionChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="title">
+                        <span class="material-icons">favorite_border</span> Heart Rate (BPM) Progression
+                    </h2>
+                    <div class="small-chart-container">
+                        <canvas id="heartRateChart"></canvas>
+                    </div>
+                    <p class="text-xs text-center text-[var(--text-secondary)] mt-1">Heart rate fluctuations over time
+                    </p>
+                </div>
+            </div>
+            <div class="lg:col-span-1 card space-y-6">
+                <div>
+                    <h2 class="title">
+                        <span class="material-icons">psychology</span> Emotional Analysis
+                    </h2>
+                    <div class="text-box h-[calc(100%-3rem)]">
+                        <p>The person felt a lot of different things. At first, they seemed really
+                            <strong>Happy</strong> – you can see it in their smile and hear it in their voice. This
+                            happiness was the main vibe, but every now and then, something in the video would make them
+                            look genuinely <strong>Surprised</strong>. These moments of surprise were quick, though, and
+                            they'd go right back to seeming joyful.</p><br />
+                        <p>But if you look closer at all the signs, it's a bit more complicated. About halfway through,
+                            when their heart rate ticked up a bit, their happiness seemed to dip. Their voice also
+                            started to sound a little <strong>Sad</strong>, and their face showed hints of
+                            <strong>Fear</strong>. It wasn't like they were super upset, more like a brief moment of
+                            worry that passed over their generally good mood. Even though they kept using positive
+                            words, you could hear tiny pauses and changes in their voice that matched those uneasy
+                            feelings.</p><br />
+                        <p>What they said was mostly upbeat. But their body language and tone of voice told a slightly
+                            different story, picking up on those little moments of worry. It seems like they were trying
+                            to stay positive on the outside, but inside, they might have been feeling a mix of
+                            <strong>Anticipation</strong> (that surprise and slight fear) and maybe a bit of
+                            <strong>Apprehension</strong>. Overall, they came across as optimistic and able to bounce
+                            back from those brief uncertain moments. This suggests they were feeling pretty hopeful and
+                            could shake off any unease quickly. The whole thing seemed to really get to them
+                            emotionally, in a good way mostly, sparking a rich mix of feelings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-1 card">
+                <h2 class="title">
+                    <span class="material-icons">record_voice_over</span> Verbal Emotional Spectrum
+                </h2>
+                <div class="spider-chart-container">
+                    <canvas id="spiderChartVerbal"></canvas>
+                </div>
+                <p class="text-xs text-center text-[var(--text-secondary)] mt-1">Distribution of emotions based on
+                    spoken words</p>
+                <h2 class="title mt-6">
+                    <span class="material-icons">accessibility_new</span> Non-Verbal Emotional Spectrum
+                </h2>
+                <div class="spider-chart-container">
+                    <canvas id="spiderChartNonVerbal"></canvas>
+                </div>
+                <p class="text-xs text-center text-[var(--text-secondary)] mt-1">Distribution of emotions based on body
+                    language &amp; gestures</p>
+            </div>
+        </div>
+        <footer class="text-center mt-16 py-8 border-footer">
+            <p class="footer-text">© 2024 Emotion AI. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        const chartTextColor = getComputedStyle(document.documentElement).getPropertyValue('--text-secondary').trim();
+        const chartGridColor = getComputedStyle(document.documentElement).getPropertyValue('--border-primary').trim();
+        const accentPrimary = getComputedStyle(document.documentElement).getPropertyValue('--accent-primary').trim();
+        const accentSecondary = getComputedStyle(document.documentElement).getPropertyValue('--accent-secondary').trim();
+        const emotionSpectrumData = {
+            happiness: [0.2, 0.3, 0.7, 0.8, 0.6, 0.7, 0.9],
+            sadness: [0.1, 0.2, 0.1, 0.3, 0.2, 0.1, 0.1],
+            anger: [0.05, 0.1, 0.05, 0.1, 0.15, 0.1, 0.05],
+            surprise: [0.3, 0.4, 0.2, 0.5, 0.3, 0.6, 0.4],
+            fear: [0.02, 0.05, 0.03, 0.08, 0.05, 0.06, 0.04],
+            disgust: [0.01, 0.03, 0.02, 0.04, 0.03, 0.02, 0.01]
+        };
+        const emotionSpectrumDatasets = [{
+            label: 'Happiness',
+            data: emotionSpectrumData.happiness,
+            borderColor: accentPrimary,
+            backgroundColor: 'transparent',
+            tension: 0.4,
+            borderWidth: 1.5,
+            pointRadius: 2,
+            pointBackgroundColor: accentPrimary,
+            borderDash: [5, 5]
+        }, {
+            label: 'Sadness',
+            data: emotionSpectrumData.sadness,
+            borderColor: accentSecondary,
+            backgroundColor: 'transparent',
+            tension: 0.4,
+            borderWidth: 1.5,
+            pointRadius: 2,
+            pointBackgroundColor: accentSecondary,
+            borderDash: [5, 5]
+        }, {
+            label: 'Anger',
+            data: emotionSpectrumData.anger,
+            borderColor: 'rgba(239, 108, 108, 0.7)',
+            backgroundColor: 'transparent',
+            tension: 0.4,
+            borderWidth: 1.5,
+            pointRadius: 2,
+            pointBackgroundColor: 'rgba(239, 108, 108, 0.7)',
+            borderDash: [5, 5]
+        }, {
+            label: 'Surprise',
+            data: emotionSpectrumData.surprise,
+            borderColor: 'rgba(251, 191, 106, 0.7)',
+            backgroundColor: 'transparent',
+            tension: 0.4,
+            borderWidth: 1.5,
+            pointRadius: 2,
+            pointBackgroundColor: 'rgba(251, 191, 106, 0.7)',
+            borderDash: [5, 5]
+        }, {
+            label: 'Fear',
+            data: emotionSpectrumData.fear,
+            borderColor: 'rgba(186, 104, 200, 0.7)',
+            backgroundColor: 'transparent',
+            tension: 0.4,
+            borderWidth: 1.5,
+            pointRadius: 2,
+            pointBackgroundColor: 'rgba(186, 104, 200, 0.7)',
+            borderDash: [5, 5]
+        }, {
+            label: 'Disgust',
+            data: emotionSpectrumData.disgust,
+            borderColor: 'rgba(121, 85, 72, 0.7)',
+            backgroundColor: 'transparent',
+            tension: 0.4,
+            borderWidth: 1.5,
+            pointRadius: 2,
+            pointBackgroundColor: 'rgba(121, 85, 72, 0.7)',
+            borderDash: [5, 5]
+        }];
+        const defaultLineChartOptions = (yAxisLabel, xAxisLabel = 'Time') => ({
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: yAxisLabel,
+                        color: chartTextColor,
+                        font: {
+                            weight: '500',
+                            size: 10
+                        }
+                    },
+                    ticks: {
+                        color: chartTextColor,
+                        font: {
+                            size: 9
+                        }
+                    },
+                    grid: {
+                        color: chartGridColor
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: xAxisLabel,
+                        color: chartTextColor,
+                        font: {
+                            weight: '500',
+                            size: 10
+                        }
+                    },
+                    ticks: {
+                        color: chartTextColor,
+                        font: {
+                            size: 9
+                        }
+                    },
+                    grid: {
+                        color: chartGridColor
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        color: chartTextColor,
+                        usePointStyle: true,
+                        boxWidth: 6,
+                        padding: 10,
+                        font: {
+                            size: 8
+                        }
+                    }
+                }
+            }
+        });
+        const createCombinedLineChart = (canvasId, mainLabel, mainData, mainBorderColor, yAxisLabel, removeMainLabel) => {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            let datasets = [];
+            if (!removeMainLabel) {
+                datasets.push({
+                    label: mainLabel,
+                    data: mainData,
+                    borderColor: mainBorderColor,
+                    backgroundColor: mainBorderColor.replace('1)', '0.2)'),
+                    tension: 0.4,
+                    fill: true,
+                    borderWidth: 2,
+                    pointRadius: 3,
+                    pointBackgroundColor: mainBorderColor
+                });
+            }
+            datasets = datasets.concat(emotionSpectrumDatasets.map(ds => ({
+                ...ds
+            })));
+            return new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['0s', '10s', '20s', '30s', '40s', '50s', '60s'],
+                    datasets: datasets
+                },
+                options: {
+                    ...defaultLineChartOptions(yAxisLabel),
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: chartTextColor,
+                                usePointStyle: true,
+                                boxWidth: 6,
+                                padding: 8,
+                                font: {
+                                    size: 9
+                                },
+                                filter: function (legendItem, chartData) {
+                                    if (!removeMainLabel && legendItem.datasetIndex === 0) return true;
+                                    if (legendItem.text.includes("(Spectrum)")) {
+                                        legendItem.text = legendItem.text.replace(" (Spectrum)", "");
+                                    }
+                                    const startIndex = removeMainLabel ? 0 : 1;
+                                    if (legendItem.datasetIndex >= startIndex && legendItem.datasetIndex < startIndex + 6) { // Adjusted to 6 for all emotions
+                                        return true;
+                                    }
+                                    return false;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        };
+        createCombinedLineChart('voiceToneChart', '', [], 'rgba(139, 195, 74, 1)', 'Emotion Intensity', true);
+        createCombinedLineChart('facialExpressionChart', '', [], 'rgba(255, 167, 38, 1)', 'Emotion Intensity', true);
+        const createSmallLineChart = (canvasId, label, data, borderColor, yAxisLabel) => {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            return new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['0s', '10s', '20s', '30s', '40s', '50s', '60s'],
+                    datasets: [{
+                        label: label,
+                        data: data,
+                        borderColor: borderColor,
+                        backgroundColor: borderColor.replace('1)', '0.2)'),
+                        tension: 0.4,
+                        fill: true,
+                        borderWidth: 1.5,
+                        pointRadius: 2,
+                        pointBackgroundColor: borderColor
+                    }]
+                },
+                options: {
+                    ...defaultLineChartOptions(yAxisLabel),
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        };
+        createSmallLineChart('heartRateChart', 'BPM', [70, 72, 75, 73, 78, 80, 76], 'rgba(236, 64, 122, 1)', 'Heart Rate (BPM)');
+        const spiderChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            elements: {
+                line: {
+                    borderWidth: 2
+                }
+            },
+            scales: {
+                r: {
+                    angleLines: {
+                        color: chartGridColor
+                    },
+                    grid: {
+                        color: chartGridColor
+                    },
+                    pointLabels: {
+                        font: {
+                            size: 10
+                        },
+                        color: chartTextColor
+                    },
+                    ticks: {
+                        backdropColor: 'rgba(45, 55, 72, 0.75)',
+                        color: chartTextColor,
+                        stepSize: 0.2,
+                        font: {
+                            size: 9
+                        }
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 1
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        };
+        const emotionLabelsForSpider = ['Happiness', 'Sadness', 'Anger', 'Surprise', 'Fear', 'Disgust'];
+        const ctxSpiderVerbal = document.getElementById('spiderChartVerbal').getContext('2d');
+        const spiderChartVerbal = new Chart(ctxSpiderVerbal, {
+            type: 'radar',
+            data: {
+                labels: emotionLabelsForSpider,
+                datasets: [{
+                    label: 'Verbal Emotions',
+                    data: [0.8, 0.1, 0.05, 0.6, 0.15, 0.02],
+                    fill: true,
+                    backgroundColor: accentPrimary.replace('1)', '0.3)'),
+                    borderColor: accentPrimary,
+                    pointBackgroundColor: accentPrimary,
+                    pointBorderColor: '#2D3748',
+                    pointHoverBackgroundColor: '#E2E8F0',
+                    pointHoverBorderColor: accentPrimary,
+                    borderWidth: 2
+                }]
+            },
+            options: spiderChartOptions
+        });
+        const ctxSpiderNonVerbal = document.getElementById('spiderChartNonVerbal').getContext('2d');
+        const spiderChartNonVerbal = new Chart(ctxSpiderNonVerbal, {
+            type: 'radar',
+            data: {
+                labels: emotionLabelsForSpider,
+                datasets: [{
+                    label: 'Non-Verbal Emotions',
+                    data: [0.6, 0.3, 0.15, 0.4, 0.35, 0.1],
+                    fill: true,
+                    backgroundColor: accentSecondary.replace('1)', '0.3)'),
+                    borderColor: accentSecondary,
+                    pointBackgroundColor: accentSecondary,
+                    pointBorderColor: '#2D3748',
+                    pointHoverBackgroundColor: '#E2E8F0',
+                    pointHoverBorderColor: accentSecondary,
+                    borderWidth: 2
+                }]
+            },
+            options: spiderChartOptions
+        });
+    </script>
+</body>
+
+</html>

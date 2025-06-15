@@ -1,0 +1,534 @@
+[
+  {
+    "frame": "frame_0001.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Surprise",
+      "2": "Anger",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24567
+  },
+  {
+    "frame": "frame_0011.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Surprise",
+      "1": "Anger",
+      "2": "Sadness",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24564
+  },
+  {
+    "frame": "frame_0021.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Anger",
+      "2": "Surprise",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24569
+  },
+  {
+    "frame": "frame_0031.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Anger",
+      "2": "Sadness",
+      "3": "Surprise",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24565
+  },
+  {
+    "frame": "frame_0041.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Anger",
+      "2": "Surprise",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24560
+  },
+  {
+    "frame": "frame_0051.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Anger",
+      "2": "Surprise",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24571
+  },
+  {
+    "frame": "frame_0061.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Anger",
+      "2": "Sadness",
+      "3": "Surprise",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24563
+  },
+  {
+    "frame": "frame_0071.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Anger",
+      "2": "Sadness",
+      "3": "Surprise",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24570
+  },
+  {
+    "frame": "frame_0081.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Sadness",
+      "2": "Sadness",
+      "3": "Surprise",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24566
+  },
+  {
+    "frame": "frame_0091.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Anger",
+      "2": "Neutral",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24568
+  },
+  {
+    "frame": "frame_0101.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Anger",
+      "2": "Sadness",
+      "3": "Neutral",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24567
+  },
+  {
+    "frame": "frame_0111.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Neutral",
+      "2": "Anger",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24564
+  },
+  {
+    "frame": "frame_0121.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Surprise",
+      "2": "Anger",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24569
+  },
+  {
+    "frame": "frame_0131.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Anger",
+      "2": "Surprise",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24560
+  },
+  {
+    "frame": "frame_0141.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Anger",
+      "2": "Sadness",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24565
+  },
+  {
+    "frame": "frame_0151.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Disgust",
+      "1": "Anger",
+      "2": "Sadness",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24563
+  },
+  {
+    "frame": "frame_0161.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Sadness",
+      "2": "Sadness",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24570
+  },
+  {
+    "frame": "frame_0171.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Sadness",
+      "2": "Anger",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24566
+  },
+  {
+    "frame": "frame_0181.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Surprise",
+      "2": "Sadness",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24571
+  },
+  {
+    "frame": "frame_0191.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Sadness",
+      "2": "Sadness",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24568
+  },
+  {
+    "frame": "frame_0201.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Anger",
+      "2": "Surprise",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24567
+  },
+  {
+    "frame": "frame_0211.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Anger",
+      "2": "Surprise",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24564
+  },
+  {
+    "frame": "frame_0221.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Anger",
+      "2": "Surprise",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24569
+  },
+  {
+    "frame": "frame_0231.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Sadness",
+      "2": "Surprise",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24560
+  },
+  {
+    "frame": "frame_0241.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Anger",
+      "2": "Surprise",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24563
+  },
+  {
+    "frame": "frame_0251.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Anger",
+      "2": "Sadness",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24565
+  },
+  {
+    "frame": "frame_0261.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Anger",
+      "2": "Surprise",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24570
+  },
+  {
+    "frame": "frame_0271.png",
+    "num_faces": 5,
+    "expressions": {
+      "0": "Sadness",
+      "1": "Sadness",
+      "2": "Surprise",
+      "3": "Sadness",
+      "4": "Neutral"
+    },
+    "valence_arousal": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    },
+    "process_id": 24568
+  }
+]
